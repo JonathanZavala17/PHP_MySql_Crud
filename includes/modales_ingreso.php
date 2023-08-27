@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="col-md-8">
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="DTLista">
                 <thead>
                     <tr>
                         <th>Titulo</th>
@@ -36,7 +36,7 @@
                 </thead>
                 <tbody>
                     <?php 
-                        $query = "SELECT * FROM task";
+                        $query = "SELECT * FROM task ORDER BY title ASC";
                         $result_tasks = mysqli_query($conn, $query);
 
                         while($row = mysqli_fetch_array($result_tasks)) { ?>
