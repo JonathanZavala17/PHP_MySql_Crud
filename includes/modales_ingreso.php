@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="col-md-8">
-            <table id="DTLista" class="styled-table stripe hover compact">
+            <table id="DTLista" class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Titulo</th>
