@@ -13,8 +13,6 @@
             $row = mysqli_fetch_array($result);
             $title = $row['title'];
             $description = $row['description'];
-            echo $title;
-            echo $description;
         }
     }
 
