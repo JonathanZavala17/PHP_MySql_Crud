@@ -1,5 +1,7 @@
 <div class="container p-4">
     <div class="row">
+
+        <!--Ingreso de datos-->
         <div class="col-md-4">
 
             <?php if(isset($_SESSION['message'])) {?>
@@ -24,6 +26,8 @@
                 </form>
             </div>
         </div>
+
+        <!--Tabla DATATABLE-->
         <div class="col-md-8">
             <table id="DTLista" class="table table-bordered">
                 <thead>
@@ -57,6 +61,42 @@
                                             <mat-icon class="mat-18">Eliminar</mat-icon>
                                         </button>
                                     </a>
+                                </td>
+                            </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+
+        <!--Espacio izquierdo-->
+        <div class="col-md-4">
+
+        </div>
+
+        <!--Tabla normal-->
+        <div class="col-md-8">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Fecha de Creación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        $query = "SELECT * FROM task ORDER BY title ASC";
+                        $result_tasks = mysqli_query($conn, $query);
+
+                        while($row = mysqli_fetch_array($result_tasks)) { ?>
+                            <tr>
+                                <td><?php echo $row['title']; ?></td>
+                                <td><?php echo $row['description']; ?></td>
+                                <td><?php echo $row['created_at']; ?></td>
+                                <td>
+                                    <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-primary">Editar</a>
+                                    <a href="delete_task.php?id=<?php echo $row['id']?>" class="btn btn-danger">Eliminar</a>
                                 </td>
                             </tr>
                     <?php } ?>
