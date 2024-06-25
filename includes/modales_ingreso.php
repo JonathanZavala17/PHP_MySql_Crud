@@ -43,7 +43,7 @@
                             <tr>
                                 <td><?php echo $row['title']; ?></td>
                                 <td><?php echo $row['description']; ?></td>
-                                <td><?php echo $row['created_At']; ?></td>
+                                <td><?php echo $row['created_at']; ?></td>
                                 <td>
                                     <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-primary">
                                         <i class="fas fa-marker"></i>
